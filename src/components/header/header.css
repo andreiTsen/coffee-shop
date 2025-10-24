@@ -1,0 +1,29 @@
+.header__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 90px;
+    left: 147px;
+    z-index: 1;
+}
+
+.header__item:not(:last-child) {
+    margin-right: 40px;
+}
+
+.header__link {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.logo {
+    position: relative;
+    top: -17px;;
+}
