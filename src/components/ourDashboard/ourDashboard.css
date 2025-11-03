@@ -1,0 +1,25 @@
+.ourDashboard {
+    background-image: url('../../assets/images/ourDashboard.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 260px;
+    margin-bottom: 30px;
+    max-width: 1440px;
+    position: relative;
+}
+
+.ourDashboard__title {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 49px;
+    color: #FFFFFF;
+    margin: 0 0 20px 0;
+    letter-spacing: 2.5px;
+    margin-bottom: -2px;
+    position: absolute;
+    top: 54%;
+    left: 42%;
+}

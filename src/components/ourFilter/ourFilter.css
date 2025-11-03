@@ -1,0 +1,43 @@
+.ourFilter {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    gap: 0 80px;
+    margin-bottom: 75px;
+}
+
+.search__label {
+    margin-right: 20px;
+}
+
+.search__input {
+    width: 175px;
+    height: 25px;
+    text-align: center;
+}
+
+.tabs {
+    display: flex;
+    gap: 0 5px;
+}
+
+.tabs__button {
+    width: 75px;
+    height: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 5px;
+}
+
+.tabs__button:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.tabs__button:active {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+.tabs__label {
+    margin-right: 35px;
+}

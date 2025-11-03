@@ -4,8 +4,8 @@
     margin: 0;
     padding: 0;
     position: relative;
-    top: 90px;
-    left: 147px;
+    top: 95px;
+    left: 140px;
     z-index: 1;
 }
 
@@ -23,7 +23,9 @@
     text-decoration: none;
 }
 
-.logo {
+.logo>a {
     position: relative;
-    top: -17px;;
+    top: 0px;
+    left: -40px;
+    transform: scaleX(180deg);
 }
