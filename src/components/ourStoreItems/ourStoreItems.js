@@ -3,16 +3,14 @@ import OurCards from "../ourCards/ourCards";
 
 class OurStoreItems extends Component {
     render() {
-        const {data} = this.props;
-        const {countries} = this.props;
+        const {ourData} = this.props;
+        const cards = ourData.map(card => {
+            const {id, ...cardProps} = card;
+            return <OurCards key={id} {...cardProps} />
+        })
         return (
             <div className="ourStore__items">
-                <OurCards data={data} countries={countries} index={1}/>
-                <OurCards data={data} countries={countries} index={2}/>
-                <OurCards data={data} countries={countries} index={3}/>
-                <OurCards data={data} countries={countries} index={1}/>
-                <OurCards data={data} countries={countries} index={1}/>
-                <OurCards data={data} countries={countries} index={1}/>
+                {cards}
             </div>
         )
     }

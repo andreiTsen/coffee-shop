@@ -5,12 +5,11 @@ import "./ourStore.css";
 
 class OurStore extends Component {
     render() {
-        const {data} = this.props;
-        const {countries} = this.props;
+        const {ourData, onUpdateSearch, onTabsSelect} = this.props;
         return (
             <section className="ourStore">
-                <OurFilter />
-                <OurStoreItems data={data} countries={countries} />
+                <OurFilter onUpdateSearch={onUpdateSearch} onTabsSelect={onTabsSelect} />
+                <OurStoreItems ourData={ourData} />
             </section>
         )
     }

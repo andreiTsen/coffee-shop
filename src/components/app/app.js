@@ -23,11 +23,16 @@ class App extends Component {
         {id: 2, title: 'Presto Coffee Beans 1 kg', price: 15.99, image: coffeePresto},
         {id: 3, title: 'AROMISTICO Coffee 1 kg', price: 6.99, image: coffeeAromistico},
       ],
-      countries: [
-        {id: 1, name: 'Brasil'},
-        {id: 2, name: 'Kenya'},
-        {id: 3, name: 'Columbia'},
-      ]
+      ourData: [
+        {id: 1, title: 'AROMISTICO Coffee 1 kg', price: 6.99, image: coffeeAromistico, country: 'Brasil'},
+        {id: 2, title: 'AROMISTICO Coffee 1 kg', price: 6.99, image: coffeeAromistico, country: 'Kenya'},
+        {id: 3, title: 'AROMISTICO Coffee 1 kg', price: 6.99, image: coffeeAromistico, country: 'Columbia'},
+        {id: 4, title: 'AROMISTICO Coffee 1 kg', price: 6.99, image: coffeeAromistico, country: 'Brasil'},
+        {id: 5, title: 'AROMISTICO Coffee 1 kg', price: 6.99, image: coffeeAromistico, country: 'Brasil'},
+        {id: 6, title: 'AROMISTICO Coffee 1 kg', price: 6.99, image: coffeeAromistico, country: 'Brasil'},
+      ],
+      term: '',
+      tabs: 'all',
     }
   }
 
@@ -35,9 +40,40 @@ class App extends Component {
     this.setState({page});
   }
 
+  searchPost = (items, term) => {
+    if (term.length === 0) {
+      return items;
+    }
+
+    return items.filter(item => {
+      return item.title.indexOf(term) > -1;
+    })
+  }
+
+  onUpdateSearch = (term) => {
+    this.setState({term});
+  }
+
+  tabsPost = (items, tabs) => {
+    switch (tabs) {
+      case 'Brasil':
+        return items.filter(item => item.country === 'Brasil');
+        case 'Kenya':
+          return items.filter(item => item.country === 'Kenya');
+        case 'Columbia':
+          return items.filter(item => item.country === 'Columbia');
+        default:
+          return items;
+    };
+  }
+
+  onTabsSelect = (tabs) => {
+    this.setState({tabs});
+  }
+
   render() {
-    const {data} = this.state;
-    const {countries} = this.state;
+    const {data, ourData, term, tabs} = this.state;
+    const visibleData = this.tabsPost(this.searchPost(ourData, term), tabs);
 
     switch (this.state.page) {
       case 'main':
@@ -59,7 +95,7 @@ class App extends Component {
             <main>
               <OurDashboard />
               <OurAbout />
-              <OurStore data={data} countries={countries} />
+              <OurStore ourData={visibleData} onUpdateSearch={this.onUpdateSearch} onTabsSelect={this.onTabsSelect} />
             </main>
             <Footer/>
           </div>
