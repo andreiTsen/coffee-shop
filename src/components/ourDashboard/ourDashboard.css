@@ -9,6 +9,17 @@
     position: relative;
 }
 
+.pleasure {
+    background-image: url('../../assets/images/pleasure.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 260px;
+    margin-bottom: 30px;
+    max-width: 1440px;
+    position: relative;
+}
+
 .ourDashboard__title {
     font-family: 'Open Sans';
     font-style: normal;

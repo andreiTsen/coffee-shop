@@ -16,7 +16,7 @@ class Header extends Component {
                             </a>
                         </li>
                         <li className="header__item" key={2}>
-                            <a className="header__link" href="/about">Coffee house</a>
+                            <a className="header__link" href="/about" onClick={(e) => { e.preventDefault(); onNavigate('main'); }}>Coffee house</a>
                         </li>
                         <li className="header__item" key={3} >
                             <a className="header__link" href="/ourCoffee" onClick={(e) => { e.preventDefault(); onNavigate('ourCoffee'); }}>Our coffee</a>

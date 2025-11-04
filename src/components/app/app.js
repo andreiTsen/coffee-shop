@@ -8,6 +8,7 @@ import OurDashboard from '../ourDashboard/ourDashboard';
 import OurAbout from '../ourAbout/ourAbout';
 import OurStore from '../ourStore/ourStore';
 import ItemPage from '../itemPage/itemPage';
+import OurStoreItems from '../ourStoreItems/ourStoreItems';
 
 import coffeeBeans from '../../assets/images/coffeeBeans.jpg';
 import coffeePresto from '../../assets/images/coffeePresto.jpg';
@@ -34,6 +35,7 @@ class App extends Component {
       ],
       term: '',
       tabs: 'all',
+      identyfityPagePleasure: 'pleasure',
     }
   }
 
@@ -86,7 +88,7 @@ class App extends Component {
               <About />
               <Store data={data} onNavigate = {this.handlePageChange}/>
             </main>
-            <Footer />
+            <Footer onNavigate={this.handlePageChange} />
           </div>
         )
       case 'ourCoffee':
@@ -98,7 +100,7 @@ class App extends Component {
               <OurAbout />
               <OurStore ourData={visibleData} onUpdateSearch={this.onUpdateSearch} onTabsSelect={this.onTabsSelect} onNavigate = {this.handlePageChange} />
             </main>
-            <Footer/>
+            <Footer onNavigate={this.handlePageChange}/>
           </div>
         )
       case 'itemPage':
@@ -106,15 +108,23 @@ class App extends Component {
           <div className="app">
             <Header onNavigate = {this.handlePageChange} />
             <main>
-              <OurDashboard/>
+              <OurDashboard />
               <ItemPage/>
             </main>
-            <Footer/>
+            <Footer onNavigate={this.handlePageChange}/>
           </div>
         )
       case 'pleasure':
         return (
-          <div className="app">gjh</div>
+          <div className="app">
+            <Header onNavigate={this.handlePageChange} />
+            <main>
+              <OurDashboard identyfityPagePleasure={this.state.identyfityPagePleasure} />
+              <OurAbout identyfityPagePleasure={this.state.identyfityPagePleasure} />
+              <OurStoreItems ourData={visibleData} onNavigate = {this.handlePageChange} />
+            </main>
+            <Footer onNavigate={this.handlePageChange}/>
+          </div>
         )
       default:
         return (
@@ -125,7 +135,7 @@ class App extends Component {
               <About />
               <Store data={data}/>
             </main>
-            <Footer />
+            <Footer onNavigate={this.handlePageChange} />
           </div>
         )
     }
