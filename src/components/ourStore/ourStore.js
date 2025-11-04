@@ -5,11 +5,11 @@ import "./ourStore.css";
 
 class OurStore extends Component {
     render() {
-        const {ourData, onUpdateSearch, onTabsSelect} = this.props;
+        const {ourData, onUpdateSearch, onTabsSelect, onNavigate} = this.props;
         return (
             <section className="ourStore">
                 <OurFilter onUpdateSearch={onUpdateSearch} onTabsSelect={onTabsSelect} />
-                <OurStoreItems ourData={ourData} />
+                <OurStoreItems ourData={ourData} onNavigate = {onNavigate}/>
             </section>
         )
     }

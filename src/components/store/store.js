@@ -5,11 +5,11 @@ import Cards from "../cards/cards";
 class Store extends Component {
 
     render() {
-        const {data} = this.props;
+        const {data, onNavigate} = this.props;
         const card = data.map(card => {
             const {id, ...cardProps} = card;
             return (
-                <Cards key={id} {...cardProps} />
+                <Cards key={id} {...cardProps} onNavigate={onNavigate} />
             );
         })
 

@@ -4,14 +4,15 @@ import Dashboard from '../dashboard/dashboard';
 import About from '../about/about';
 import Store from '../store/store';
 import Footer from '../footer/footer';
+import OurDashboard from '../ourDashboard/ourDashboard';
+import OurAbout from '../ourAbout/ourAbout';
+import OurStore from '../ourStore/ourStore';
+import ItemPage from '../itemPage/itemPage';
 
 import coffeeBeans from '../../assets/images/coffeeBeans.jpg';
 import coffeePresto from '../../assets/images/coffeePresto.jpg';
 import coffeeAromistico from '../../assets/images/coffeeAromistico.jpg';
 import './app.css';
-import OurDashboard from '../ourDashboard/ourDashboard';
-import OurAbout from '../ourAbout/ourAbout';
-import OurStore from '../ourStore/ourStore';
 
 class App extends Component {
   constructor(props) {
@@ -83,7 +84,7 @@ class App extends Component {
             <main>
               <Dashboard />
               <About />
-              <Store data={data}/>
+              <Store data={data} onNavigate = {this.handlePageChange}/>
             </main>
             <Footer />
           </div>
@@ -95,10 +96,25 @@ class App extends Component {
             <main>
               <OurDashboard />
               <OurAbout />
-              <OurStore ourData={visibleData} onUpdateSearch={this.onUpdateSearch} onTabsSelect={this.onTabsSelect} />
+              <OurStore ourData={visibleData} onUpdateSearch={this.onUpdateSearch} onTabsSelect={this.onTabsSelect} onNavigate = {this.handlePageChange} />
             </main>
             <Footer/>
           </div>
+        )
+      case 'itemPage':
+        return (
+          <div className="app">
+            <Header onNavigate = {this.handlePageChange} />
+            <main>
+              <OurDashboard/>
+              <ItemPage/>
+            </main>
+            <Footer/>
+          </div>
+        )
+      case 'pleasure':
+        return (
+          <div className="app">gjh</div>
         )
       default:
         return (

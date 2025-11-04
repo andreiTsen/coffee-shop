@@ -4,9 +4,9 @@ import "./ourCards.css";
 class OurCards extends Component {
 
     render() {
-        const {price, title, image, country} = this.props;
+        const {price, title, image, country, onNavigate} = this.props;
         return (
-            <div className="ourStore__item">
+            <div className="ourStore__item" onClick={(e) => { e.preventDefault(); onNavigate('itemPage'); }}>
                 <img className="ourStore__img" src={image} alt="" />
                 <div className="ourStore__container">
                     <h4 className="ourStore_item__title">{title}</h4>

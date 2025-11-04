@@ -22,7 +22,7 @@ class Header extends Component {
                             <a className="header__link" href="/ourCoffee" onClick={(e) => { e.preventDefault(); onNavigate('ourCoffee'); }}>Our coffee</a>
                         </li>
                         <li className="header__item" key={4}>
-                            <a className="header__link" href="/for-your-pleasure">For your pleasure</a>
+                            <a className="header__link" href="/for-your-pleasure" onClick={(e) => { e.preventDefault(); onNavigate('pleasure'); }} >For your pleasure</a>
                         </li>
                     </ul>
                 </nav>

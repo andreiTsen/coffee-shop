@@ -1,0 +1,55 @@
+.itemPage {
+    display: flex;
+    justify-content: center;
+    padding: 70px 0 0 0;
+    max-width: 810px;
+    margin: 0 auto;
+    gap: 0 55px;
+    padding-top: 40px;
+    padding-right: 70px;
+    margin-bottom: 60px;
+}
+
+.itemPage__headerContainer {
+    text-align: center;
+    padding-top: 17px;
+    padding-left: 90px;
+    margin-bottom: 50px;
+}
+
+.itemPage__header {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    color: #000000;
+    margin: 0 0 20px 0;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.itemPage__text {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 15px;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+.itemPage__price {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 15px;
+    color: #000000;
+    margin: 0 0 20px 0;
+}
+
+.itemPage__price > span {
+    font-weight: 700;
+    font-size: 24px;
+}
